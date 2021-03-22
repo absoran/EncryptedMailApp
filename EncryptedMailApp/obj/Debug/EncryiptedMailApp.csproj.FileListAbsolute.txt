@@ -1,0 +1,45 @@
+C:\Users\Roali Biten\source\repos\EncryiptedMailApp\EncryiptedMailApp\bin\Debug\EncryiptedMailApp.exe.config
+C:\Users\Roali Biten\source\repos\EncryiptedMailApp\EncryiptedMailApp\bin\Debug\EncryiptedMailApp.exe
+C:\Users\Roali Biten\source\repos\EncryiptedMailApp\EncryiptedMailApp\bin\Debug\EncryiptedMailApp.pdb
+C:\Users\Roali Biten\source\repos\EncryiptedMailApp\EncryiptedMailApp\obj\Debug\EncryiptedMailApp.csprojAssemblyReference.cache
+C:\Users\Roali Biten\source\repos\EncryiptedMailApp\EncryiptedMailApp\obj\Debug\EncryiptedMailApp.Properties.Resources.resources
+C:\Users\Roali Biten\source\repos\EncryiptedMailApp\EncryiptedMailApp\obj\Debug\EncryiptedMailApp.csproj.GenerateResource.cache
+C:\Users\Roali Biten\source\repos\EncryiptedMailApp\EncryiptedMailApp\obj\Debug\EncryiptedMailApp.csproj.CoreCompileInputs.cache
+C:\Users\Roali Biten\source\repos\EncryiptedMailApp\EncryiptedMailApp\obj\Debug\EncryiptedMailApp.exe
+C:\Users\Roali Biten\source\repos\EncryiptedMailApp\EncryiptedMailApp\obj\Debug\EncryiptedMailApp.pdb
+C:\Users\Roali Biten\source\repos\EncryiptedMailApp\EncryiptedMailApp\obj\Debug\EncryiptedMailApp.Form1.resources
+C:\Users\Lenovo\Desktop\EncryiptedMailApp-main\EncryiptedMailApp-main\EncryiptedMailApp\bin\Debug\EncryiptedMailApp.exe.config
+C:\Users\Lenovo\Desktop\EncryiptedMailApp-main\EncryiptedMailApp-main\EncryiptedMailApp\bin\Debug\EncryiptedMailApp.exe
+C:\Users\Lenovo\Desktop\EncryiptedMailApp-main\EncryiptedMailApp-main\EncryiptedMailApp\bin\Debug\EncryiptedMailApp.pdb
+C:\Users\Lenovo\Desktop\EncryiptedMailApp-main\EncryiptedMailApp-main\EncryiptedMailApp\obj\Debug\EncryiptedMailApp.csprojAssemblyReference.cache
+C:\Users\Lenovo\Desktop\EncryiptedMailApp-main\EncryiptedMailApp-main\EncryiptedMailApp\obj\Debug\EncryiptedMailApp.Form1.resources
+C:\Users\Lenovo\Desktop\EncryiptedMailApp-main\EncryiptedMailApp-main\EncryiptedMailApp\obj\Debug\EncryiptedMailApp.Properties.Resources.resources
+C:\Users\Lenovo\Desktop\EncryiptedMailApp-main\EncryiptedMailApp-main\EncryiptedMailApp\obj\Debug\EncryiptedMailApp.csproj.GenerateResource.cache
+C:\Users\Lenovo\Desktop\EncryiptedMailApp-main\EncryiptedMailApp-main\EncryiptedMailApp\obj\Debug\EncryiptedMailApp.csproj.CoreCompileInputs.cache
+C:\Users\Lenovo\Desktop\EncryiptedMailApp-main\EncryiptedMailApp-main\EncryiptedMailApp\obj\Debug\EncryiptedMailApp.exe
+C:\Users\Lenovo\Desktop\EncryiptedMailApp-main\EncryiptedMailApp-main\EncryiptedMailApp\obj\Debug\EncryiptedMailApp.pdb
+C:\Users\Lenovo\Desktop\EncryiptedMailApp-main\EncryiptedMailApp-main\EncryiptedMailApp\obj\Debug\EncryiptedMailApp.Splash.resources
+C:\Users\Lenovo\Desktop\EncryiptedMailApp-main\EncryiptedMailApp-main\EncryiptedMailApp\obj\Debug\EncryiptedMailApp.Register.resources
+C:\Users\Ahmet Soran\Documents\Projects\EncryptedMailApp\EncryiptedMailApp\bin\Debug\EncryiptedMailApp.exe.config
+C:\Users\Ahmet Soran\Documents\Projects\EncryptedMailApp\EncryiptedMailApp\bin\Debug\EncryiptedMailApp.exe
+C:\Users\Ahmet Soran\Documents\Projects\EncryptedMailApp\EncryiptedMailApp\bin\Debug\EncryiptedMailApp.pdb
+C:\Users\Ahmet Soran\Documents\Projects\EncryptedMailApp\EncryiptedMailApp\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\Ahmet Soran\Documents\Projects\EncryptedMailApp\EncryiptedMailApp\bin\Debug\MailKit.dll
+C:\Users\Ahmet Soran\Documents\Projects\EncryptedMailApp\EncryiptedMailApp\bin\Debug\MimeKit.dll
+C:\Users\Ahmet Soran\Documents\Projects\EncryptedMailApp\EncryiptedMailApp\bin\Debug\System.Buffers.dll
+C:\Users\Ahmet Soran\Documents\Projects\EncryptedMailApp\EncryiptedMailApp\bin\Debug\BouncyCastle.Crypto.xml
+C:\Users\Ahmet Soran\Documents\Projects\EncryptedMailApp\EncryiptedMailApp\bin\Debug\MailKit.pdb
+C:\Users\Ahmet Soran\Documents\Projects\EncryptedMailApp\EncryiptedMailApp\bin\Debug\MailKit.xml
+C:\Users\Ahmet Soran\Documents\Projects\EncryptedMailApp\EncryiptedMailApp\bin\Debug\MimeKit.pdb
+C:\Users\Ahmet Soran\Documents\Projects\EncryptedMailApp\EncryiptedMailApp\bin\Debug\MimeKit.xml
+C:\Users\Ahmet Soran\Documents\Projects\EncryptedMailApp\EncryiptedMailApp\bin\Debug\System.Buffers.xml
+C:\Users\Ahmet Soran\Documents\Projects\EncryptedMailApp\EncryiptedMailApp\obj\Debug\EncryiptedMailApp.csprojAssemblyReference.cache
+C:\Users\Ahmet Soran\Documents\Projects\EncryptedMailApp\EncryiptedMailApp\obj\Debug\EncryiptedMailApp.Form1.resources
+C:\Users\Ahmet Soran\Documents\Projects\EncryptedMailApp\EncryiptedMailApp\obj\Debug\EncryiptedMailApp.Properties.Resources.resources
+C:\Users\Ahmet Soran\Documents\Projects\EncryptedMailApp\EncryiptedMailApp\obj\Debug\EncryiptedMailApp.Register.resources
+C:\Users\Ahmet Soran\Documents\Projects\EncryptedMailApp\EncryiptedMailApp\obj\Debug\EncryiptedMailApp.Splash.resources
+C:\Users\Ahmet Soran\Documents\Projects\EncryptedMailApp\EncryiptedMailApp\obj\Debug\EncryiptedMailApp.csproj.GenerateResource.cache
+C:\Users\Ahmet Soran\Documents\Projects\EncryptedMailApp\EncryiptedMailApp\obj\Debug\EncryiptedMailApp.csproj.CoreCompileInputs.cache
+C:\Users\Ahmet Soran\Documents\Projects\EncryptedMailApp\EncryiptedMailApp\obj\Debug\EncryiptedMailApp.csproj.CopyComplete
+C:\Users\Ahmet Soran\Documents\Projects\EncryptedMailApp\EncryiptedMailApp\obj\Debug\EncryiptedMailApp.exe
+C:\Users\Ahmet Soran\Documents\Projects\EncryptedMailApp\EncryiptedMailApp\obj\Debug\EncryiptedMailApp.pdb
