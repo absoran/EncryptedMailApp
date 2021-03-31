@@ -50,6 +50,9 @@
             this.testbox = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.testbtn = new System.Windows.Forms.Button();
+            this.Mailbox = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -264,11 +267,42 @@
             this.testbtn.UseVisualStyleBackColor = true;
             this.testbtn.Click += new System.EventHandler(this.testbtn_Click);
             // 
+            // Mailbox
+            // 
+            this.Mailbox.Location = new System.Drawing.Point(248, 328);
+            this.Mailbox.Multiline = true;
+            this.Mailbox.Name = "Mailbox";
+            this.Mailbox.Size = new System.Drawing.Size(176, 96);
+            this.Mailbox.TabIndex = 23;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(245, 312);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(47, 13);
+            this.label10.TabIndex = 24;
+            this.label10.Text = "Mail Box";
+            this.label10.Click += new System.EventHandler(this.label10_Click);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(310, 444);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 25;
+            this.button3.Text = "Get Mail";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(436, 491);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.Mailbox);
             this.Controls.Add(this.testbtn);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.testbox);
@@ -325,6 +359,9 @@
         private System.Windows.Forms.TextBox testbox;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button testbtn;
+        private System.Windows.Forms.TextBox Mailbox;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Button button3;
     }
 }
 

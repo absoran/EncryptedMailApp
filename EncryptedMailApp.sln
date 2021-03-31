@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31112.23
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EncryptedMailApp", "EncryiptedMailApp\EncryptedMailApp.csproj", "{D21D9B38-DD2F-4ADA-A644-045B0058476E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EncryptedMailApp", "EncryptedMailApp\EncryptedMailApp.csproj", "{D21D9B38-DD2F-4ADA-A644-045B0058476E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
