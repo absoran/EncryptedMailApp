@@ -14,7 +14,6 @@ namespace EncDec
         private static string Key = "oEAywkyVv203XEhtKubgfLQbEc39JNus"; //32 char
         private static string MKey;
         private static string MIV;
-
         public static void setKey(string Keyvalue)
         {
             MKey = Keyvalue;
@@ -33,24 +32,6 @@ namespace EncDec
             cryptos.KeySize = 256;
             cryptos.Key = ASCIIEncoding.ASCII.GetBytes(Key);
             cryptos.IV = ASCIIEncoding.ASCII.GetBytes(IV);
-            cryptos.Padding = PaddingMode.PKCS7;
-            cryptos.Mode = CipherMode.CBC;
-
-            ICryptoTransform icrypt = cryptos.CreateEncryptor(cryptos.Key, cryptos.IV);
-
-            byte[] encryptos = icrypt.TransformFinalBlock(textbyte, 0, textbyte.Length);
-            icrypt.Dispose();
-            return Convert.ToBase64String(encryptos);
-        }
-
-        public static string EncryptMail(string decrypted)
-        {
-            byte[] textbyte = ASCIIEncoding.ASCII.GetBytes(decrypted);
-            AesCryptoServiceProvider cryptos = new AesCryptoServiceProvider();
-            cryptos.BlockSize = 128;
-            cryptos.KeySize = 256;
-            cryptos.Key = ASCIIEncoding.ASCII.GetBytes(MKey);
-            cryptos.IV = ASCIIEncoding.ASCII.GetBytes(MIV);
             cryptos.Padding = PaddingMode.PKCS7;
             cryptos.Mode = CipherMode.CBC;
 
@@ -85,7 +66,31 @@ namespace EncDec
             icrypt.Dispose();
             return ASCIIEncoding.ASCII.GetString(decryptos);
         }
+/*
+        public static string EncryptMail(string decrypted)
+        {
+            byte[] textbyte = ASCIIEncoding.ASCII.GetBytes(decrypted);
+            AesCryptoServiceProvider cryptos = new AesCryptoServiceProvider();
+            cryptos.BlockSize = 128;
+            cryptos.KeySize = 256;
+            cryptos.Key = ASCIIEncoding.ASCII.GetBytes(MKey);
+            cryptos.IV = ASCIIEncoding.ASCII.GetBytes(MIV);
+            cryptos.Padding = PaddingMode.PKCS7;
+            cryptos.Mode = CipherMode.CBC;
 
+            ICryptoTransform icrypt = cryptos.CreateEncryptor(cryptos.Key, cryptos.IV);
+
+            byte[] encryptos = icrypt.TransformFinalBlock(textbyte, 0, textbyte.Length);
+            icrypt.Dispose();
+            return Convert.ToBase64String(encryptos);
+        }
+*/
+
+
+
+
+
+/*
         public static string DecryptMail(string encrypted)
         {
             byte[] encbytes = Convert.FromBase64String(encrypted);
@@ -102,6 +107,6 @@ namespace EncDec
             byte[] decryptos = icrypt.TransformFinalBlock(encbytes, 0, encbytes.Length);
             icrypt.Dispose();
             return ASCIIEncoding.ASCII.GetString(decryptos);
-        }
+        }*/
     }
 }

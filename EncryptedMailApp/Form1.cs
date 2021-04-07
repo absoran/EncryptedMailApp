@@ -15,12 +15,15 @@ using System.IO;
 using System.Threading;
 using MailKit.Net.Pop3;
 using System.Security.Authentication;
-//using AE.Net.Mail;
+using MainProgram;
+using RSAEncDec;
+
 
 namespace EncryptedMailApp
 {
     public partial class Form1 : Form
     {
+
         public Form1()
         {
             InitializeComponent();
@@ -218,10 +221,18 @@ namespace EncryptedMailApp
 
         }
 
-        private void testbtn_Click(object sender, EventArgs e)
+        private void testbtn_Click(object sender, EventArgs e)//encrypt
         {
-            string cryptedteststring = AesCrypt.Encrypt(testbox.Text);
-            MessageBox.Show(cryptedteststring);
+            RSACrypt rsaobj = RSACrypt.getInstance();
+            string encrtypted = rsaobj.Encrypt(testbox.Text);
+            testtextbox.Text = encrtypted;
+        }
+        private void button4_Click(object sender, EventArgs e)//decrypt
+        {
+            RSACrypt rsaobj = RSACrypt.getInstance();
+            string decrypted = rsaobj.Decrypt(testtextbox.Text);
+            testtextbox.Text = decrypted;
+            keybox.Text = rsaobj.PublicKey;    
         }
 
         private void label10_Click(object sender, EventArgs e)
@@ -232,6 +243,23 @@ namespace EncryptedMailApp
         private void button3_Click(object sender, EventArgs e)
         {
             GetMails();
+        }
+
+
+
+        private void textBox1_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged_2(object sender, EventArgs e)
+        {
+
+        }
+
+        private void testbox_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

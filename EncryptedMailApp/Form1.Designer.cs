@@ -53,6 +53,9 @@
             this.Mailbox = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
+            this.testbtn2 = new System.Windows.Forms.Button();
+            this.testtextbox = new System.Windows.Forms.TextBox();
+            this.keybox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -247,6 +250,7 @@
             this.testbox.Name = "testbox";
             this.testbox.Size = new System.Drawing.Size(160, 20);
             this.testbox.TabIndex = 20;
+            this.testbox.TextChanged += new System.EventHandler(this.testbox_TextChanged);
             // 
             // label9
             // 
@@ -259,11 +263,11 @@
             // 
             // testbtn
             // 
-            this.testbtn.Location = new System.Drawing.Point(310, 68);
+            this.testbtn.Location = new System.Drawing.Point(349, 66);
             this.testbtn.Name = "testbtn";
             this.testbtn.Size = new System.Drawing.Size(75, 23);
             this.testbtn.TabIndex = 22;
-            this.testbtn.Text = "test";
+            this.testbtn.Text = "encrypt";
             this.testbtn.UseVisualStyleBackColor = true;
             this.testbtn.Click += new System.EventHandler(this.testbtn_Click);
             // 
@@ -295,11 +299,44 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
+            // testbtn2
+            // 
+            this.testbtn2.Location = new System.Drawing.Point(264, 66);
+            this.testbtn2.Name = "testbtn2";
+            this.testbtn2.Size = new System.Drawing.Size(75, 23);
+            this.testbtn2.TabIndex = 26;
+            this.testbtn2.Text = "decrypt";
+            this.testbtn2.UseVisualStyleBackColor = true;
+            this.testbtn2.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // testtextbox
+            // 
+            this.testtextbox.Location = new System.Drawing.Point(264, 95);
+            this.testtextbox.Multiline = true;
+            this.testtextbox.Name = "testtextbox";
+            this.testtextbox.Size = new System.Drawing.Size(160, 53);
+            this.testtextbox.TabIndex = 27;
+            this.testtextbox.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
+            // 
+            // keybox
+            // 
+            this.keybox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.keybox.Location = new System.Drawing.Point(264, 157);
+            this.keybox.Multiline = true;
+            this.keybox.Name = "keybox";
+            this.keybox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.keybox.Size = new System.Drawing.Size(160, 124);
+            this.keybox.TabIndex = 28;
+            this.keybox.TextChanged += new System.EventHandler(this.textBox1_TextChanged_2);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(436, 491);
+            this.Controls.Add(this.keybox);
+            this.Controls.Add(this.testtextbox);
+            this.Controls.Add(this.testbtn2);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.Mailbox);
@@ -362,6 +399,9 @@
         private System.Windows.Forms.TextBox Mailbox;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button testbtn2;
+        private System.Windows.Forms.TextBox testtextbox;
+        private System.Windows.Forms.TextBox keybox;
     }
 }
 
