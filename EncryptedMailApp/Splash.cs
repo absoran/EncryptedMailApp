@@ -9,12 +9,13 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using EncDec;
-
+using RSAEncDec;
 namespace EncryptedMailApp
 
 {
     public partial class Splash : Form
     {
+        RSACrypt RSAobj = RSACrypt.getInstance();
         public Splash()
         {
             InitializeComponent();
@@ -40,20 +41,30 @@ namespace EncryptedMailApp
                 else
                 {
                     var sr = new StreamReader("data\\" + dir + "\\data.ls");
-
                     string cryptedusr = sr.ReadLine();
                     string cryptedpass = sr.ReadLine();
                     sr.Close();
-
                     string decryptedusr = AesCrypt.Decrypt(cryptedusr);
                     string decryptedpass = AesCrypt.Decrypt(cryptedpass);
+                    
+                    var sr2 = new StreamReader("data\\" + dir + "\\PublicKey.ls");
+                    
+                        string readedKey = sr2.ReadToEnd();
+                        RSAobj.PublicKey = readedKey;
+                    
+                    sr2.Close();
 
-                    if(decryptedusr == usrname.Text && decryptedpass == usrpass.Text)
+                    var sr3 = new StreamReader("data\\" + dir + "\\PrivateKey.ls");
+                        
+                        string readedKey2 = sr3.ReadToEnd();
+                        RSAobj.PrivateKey = readedKey2;
+                    
+                    sr3.Close();
+                    if (decryptedusr == usrname.Text && decryptedpass == usrpass.Text)
                     {
                         MessageBox.Show("Authentication succesfull.");
                         Form1 log = new Form1();
                         log.Show();
-
                     }
                     else
                     {

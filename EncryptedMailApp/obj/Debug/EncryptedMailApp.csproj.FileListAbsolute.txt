@@ -23,3 +23,11 @@ C:\Users\Ahmet Soran\Documents\Projects\EncryptedMailApp\EncryptedMailApp\obj\De
 C:\Users\Ahmet Soran\Documents\Projects\EncryptedMailApp\EncryptedMailApp\obj\Debug\EncryptedMailApp.csproj.CopyComplete
 C:\Users\Ahmet Soran\Documents\Projects\EncryptedMailApp\EncryptedMailApp\obj\Debug\EncryptedMailApp.exe
 C:\Users\Ahmet Soran\Documents\Projects\EncryptedMailApp\EncryptedMailApp\obj\Debug\EncryptedMailApp.pdb
+C:\Users\Ahmet Soran\Documents\Projects\EncryptedMailApp\EncryptedMailApp\bin\Debug\Spire.Email.dll
+C:\Users\Ahmet Soran\Documents\Projects\EncryptedMailApp\EncryptedMailApp\bin\Debug\Spire.License.dll
+C:\Users\Ahmet Soran\Documents\Projects\EncryptedMailApp\EncryptedMailApp\bin\Debug\Spire.Email.xml
+C:\Users\Ahmet Soran\Documents\Projects\EncryptedMailApp\EncryptedMailApp\bin\Debug\Spire.License.xml
+C:\Users\Ahmet Soran\Documents\Projects\EncryptedMailApp\EncryptedMailApp\bin\Debug\GemBox.Email.dll
+C:\Users\Ahmet Soran\Documents\Projects\EncryptedMailApp\EncryptedMailApp\bin\Debug\S22.Imap.dll
+C:\Users\Ahmet Soran\Documents\Projects\EncryptedMailApp\EncryptedMailApp\bin\Debug\GemBox.Email.xml
+C:\Users\Ahmet Soran\Documents\Projects\EncryptedMailApp\EncryptedMailApp\bin\Debug\S22.Imap.xml

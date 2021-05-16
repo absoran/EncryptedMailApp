@@ -87,6 +87,7 @@ namespace EncryptedMailApp
             // 
             // usrname
             // 
+            this.usrname.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.usrname.Location = new System.Drawing.Point(219, 55);
             this.usrname.Name = "usrname";
             this.usrname.Size = new System.Drawing.Size(100, 20);

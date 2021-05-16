@@ -12,16 +12,14 @@ namespace EncDec
     {
         private static string IV = "Ho7YXVAoQ2EZywkI"; //16 char
         private static string Key = "oEAywkyVv203XEhtKubgfLQbEc39JNus"; //32 char
-        private static string MKey;
-        private static string MIV;
         public static void setKey(string Keyvalue)
         {
-            MKey = Keyvalue;
+            Key = Keyvalue;
         }
 
         public static void setIV(string IVvalue)
-        {
-            MKey = IVvalue;
+        {   
+            Key = IVvalue;
         }
 
         public static string Encrypt(string decrypted)

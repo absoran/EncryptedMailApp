@@ -50,12 +50,13 @@
             this.testbox = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.testbtn = new System.Windows.Forms.Button();
-            this.Mailbox = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.testbtn2 = new System.Windows.Forms.Button();
             this.testtextbox = new System.Windows.Forms.TextBox();
             this.keybox = new System.Windows.Forms.TextBox();
+            this.button4 = new System.Windows.Forms.Button();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -213,6 +214,7 @@
             // 
             this.CryptKey.Location = new System.Drawing.Point(29, 216);
             this.CryptKey.Name = "CryptKey";
+            this.CryptKey.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.CryptKey.Size = new System.Drawing.Size(187, 20);
             this.CryptKey.TabIndex = 16;
             this.CryptKey.TextChanged += new System.EventHandler(this.CryptKey_TextChanged);
@@ -231,6 +233,7 @@
             // 
             this.CryptIV.Location = new System.Drawing.Point(28, 261);
             this.CryptIV.Name = "CryptIV";
+            this.CryptIV.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.CryptIV.Size = new System.Drawing.Size(188, 20);
             this.CryptIV.TabIndex = 18;
             this.CryptIV.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
@@ -271,14 +274,6 @@
             this.testbtn.UseVisualStyleBackColor = true;
             this.testbtn.Click += new System.EventHandler(this.testbtn_Click);
             // 
-            // Mailbox
-            // 
-            this.Mailbox.Location = new System.Drawing.Point(248, 328);
-            this.Mailbox.Multiline = true;
-            this.Mailbox.Name = "Mailbox";
-            this.Mailbox.Size = new System.Drawing.Size(176, 96);
-            this.Mailbox.TabIndex = 23;
-            // 
             // label10
             // 
             this.label10.AutoSize = true;
@@ -291,7 +286,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(310, 444);
+            this.button3.Location = new System.Drawing.Point(503, 445);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 25;
@@ -329,17 +324,36 @@
             this.keybox.TabIndex = 28;
             this.keybox.TextChanged += new System.EventHandler(this.textBox1_TextChanged_2);
             // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(298, 287);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.TabIndex = 29;
+            this.button4.Text = "Change Key";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click_1);
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Location = new System.Drawing.Point(452, 41);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(176, 398);
+            this.richTextBox1.TabIndex = 30;
+            this.richTextBox1.Text = "";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(436, 491);
+            this.ClientSize = new System.Drawing.Size(651, 491);
+            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.button4);
             this.Controls.Add(this.keybox);
             this.Controls.Add(this.testtextbox);
             this.Controls.Add(this.testbtn2);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.Mailbox);
             this.Controls.Add(this.testbtn);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.testbox);
@@ -396,12 +410,13 @@
         private System.Windows.Forms.TextBox testbox;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button testbtn;
-        private System.Windows.Forms.TextBox Mailbox;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button testbtn2;
         private System.Windows.Forms.TextBox testtextbox;
         private System.Windows.Forms.TextBox keybox;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.RichTextBox richTextBox1;
     }
 }
 

@@ -20,7 +20,7 @@ namespace RSAEncDec
 
         public RSACrypt()
         {
-            createKey();
+            //createKey();
         }
         public static RSACrypt getInstance()
         {
@@ -51,9 +51,9 @@ namespace RSAEncDec
                 return privateKeyString; }   
             set { privateKeyString = value; }  
         }
-        private void createKey()
+        public void createKey()
         {
-            var cryptoServiceProvider = new RSACryptoServiceProvider(2048); 
+            var cryptoServiceProvider = new RSACryptoServiceProvider(1024); 
             var privateKey = cryptoServiceProvider.ExportParameters(true); 
             var publicKey = cryptoServiceProvider.ExportParameters(false); 
 
@@ -73,7 +73,7 @@ namespace RSAEncDec
         {
             var bytesToEncrypt = Encoding.UTF8.GetBytes(textToEncrypt);
             
-            using (var rsa = new RSACryptoServiceProvider(2048))
+            using (var rsa = new RSACryptoServiceProvider(1024))
             {
                 try
                 {
@@ -92,7 +92,7 @@ namespace RSAEncDec
         {
             var bytesToDescrypt = Encoding.UTF8.GetBytes(textToDecrypt);
 
-            using (var rsa = new RSACryptoServiceProvider(2048))
+            using (var rsa = new RSACryptoServiceProvider(1024))
             {
                 try
                 {

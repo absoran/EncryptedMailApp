@@ -13,88 +13,82 @@ using System.Security.Cryptography;
 using EncDec;
 using System.IO;
 using System.Threading;
-using MailKit.Net.Pop3;
 using System.Security.Authentication;
-using MainProgram;
 using RSAEncDec;
+using S22.Imap;
 
 
 namespace EncryptedMailApp
 {
     public partial class Form1 : Form
     {
+        static Form1 p;
+        RSACrypt RSAobj = RSACrypt.getInstance();
 
         public Form1()
         {
             InitializeComponent();
+            p = this;
         }
 
-        
-        public void GetMails()
-        {
 
-            using (var client = new Pop3Client())
+        private void GetMail()
+        {
+            try {
+                Task.Run(() =>
+                {
+                    using (ImapClient client = new ImapClient("imap.gmail.com", 993, mailFrom.Text, password.Text, AuthMethod.Login, true))
+                    {
+                        if (client.Supports("IDLE") == false)
+                        {
+                            MessageBox.Show("Server do not support IMAP IDLE");
+                            return;
+                        }
+                        client.NewMessage += new EventHandler<IdleMessageEventArgs>(OnNewMessage);
+                        while (true) ;
+                    }
+                });
+            }
+            catch (InvalidCredentialsException)
+            {
+                MessageBox.Show("The server rejected the supplied credentials.");
+            }
+            }
+
+        static void OnNewMessage(object sender, IdleMessageEventArgs e)
+        {
+            MessageBox.Show(" New Message received ");
+            MailMessage m = e.Client.GetMessage(e.MessageUID, FetchOptions.Normal);
+            p.Invoke((MethodInvoker)delegate
+            {
+                p.richTextBox1.AppendText("From :" + m.From + "\n" +
+                                        "Subject : " + m.Subject + "\n" +
+                                        "Message : " + m.Body + "\n");
+            });
+        }
+        private void SendMail()
+        {
+            try
+            {
+                string cryptedmsg = AesCrypt.Encrypt(message.Text);
+                var messag = new MailMessage(mailFrom.Text, mailTo.Text);
+                messag.Subject = subject.Text;
+                messag.Body = cryptedmsg;
+                using (SmtpClient smtp = new SmtpClient("smtp.gmail.com", 587))
+                {
+                    smtp.Credentials = new NetworkCredential(mailFrom.Text, password.Text);
+                    smtp.EnableSsl = true;
+                    smtp.Send(messag);
+                    MessageBox.Show("Email Sent");
+                }
+            }
+            catch
             {
 
-                try
-                {
+                MessageBox.Show("Please check your mail address and password.");
 
-                    var Server = "pop.gmail.com";
-                    var Port = 995;
-                    var UseSsl = false;
-                    var credentials = new NetworkCredential(mailFrom.Text, password.Text);
-                    var cancel = new CancellationTokenSource();
-                    var uri = new Uri(string.Format("pop{0}://{1}:{2}", (UseSsl ? "s" : ""), Server, Port));
+            }
 
-                    //Connect to email server
-                    client.Connect(uri, cancel.Token);
-                    client.AuthenticationMechanisms.Remove("XOAUTH2");
-                    client.Authenticate(credentials, cancel.Token);
-
-                    //Fetch Emails
-                    for (int i = 0; i < client.Count; i++)
-                    {
-                        var message = client.GetMessage(i);
-
-                        MessageBox.Show("Subject: {0}", message.Subject);
-                    }
-
-                    //Disconnect Connection
-                    client.Disconnect(true);
-
-
-                }
-                /*catch
-                {
-                    MessageBox.Show("Please check your mail address and password.");
-                }*/
-                catch(Pop3ProtocolException ex)
-                {
-                    MessageBox.Show("Protocol error while trying to connect: {0}", ex.Message);
-                    return;
-                }
-
-                try
-                {
-                    client.Authenticate(mailFrom.Text, password.Text);
-                }
-                catch (AuthenticationException ex)
-                {
-                    MessageBox.Show("Invalid user name or password.");
-                    return;
-                }
-                catch (Pop3CommandException ex)
-                {
-                    MessageBox.Show("Error trying to authenticate: {0}", ex.Message);
-                    MessageBox.Show("\tStatusText: {0}", ex.StatusText);
-                    return;
-                }
-                catch (Pop3ProtocolException ex)
-                {
-                    MessageBox.Show("Protocol error while trying to authenticate: {0}", ex.Message);
-                    return;
-                }
-            }    
         }
         
         private void textBox4_TextChanged(object sender, EventArgs e)
@@ -122,56 +116,9 @@ namespace EncryptedMailApp
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e) //mails sender
         {
-            try
-            {
-
-                MailMessage mailMessage = new MailMessage();
-                mailMessage.From = new MailAddress(mailFrom.Text, "gethealthtip");
-                mailMessage.To.Add(new MailAddress(mailTo.Text));
-                mailMessage.Subject = subject.Text;
-                string cryptedmsg = AesCrypt.Encrypt(message.Text);
-                mailMessage.Body = cryptedmsg;
-                mailMessage.IsBodyHtml = true;
-                
-
-
-                SmtpClient smtp = new SmtpClient("smtp.gmail.com")
-                {
-                    Port = 587,
-                    Credentials = new NetworkCredential(mailFrom.Text, password.Text),
-
-                   // Credentials = new NetworkCredential(mailFrom.Text, password.Text),
-                    EnableSsl = true,
-                };
-                smtp.Send(mailFrom.Text, mailTo.Text, subject.Text, cryptedmsg);
-
-                
-                MessageBox.Show("Email Sent");
-
-               /* if (labelPath.Text.Length > 0)
-                {
-                    if (System.IO.File.Exists(labelPath.Text))
-                    {
-                        mailMessage.Attachments.Add(new Attachment(labelPath.Text));
-
-                    }
-                    SmtpClient smtp = new SmtpClient();
-                    smtp.Host = "smtp.gmail.com";
-                    smtp.Credentials = new NetworkCredential(mailFrom.Text,password.Text);
-                    smtp.EnableSsl = true;
-                    smtp.Send(mailMessage);
-                    MessageBox.Show("Email Sent");
-
-                }*/
-            }
-            catch 
-            {
-
-                MessageBox.Show("Please check your mail address and password.");
-
-            }
+            SendMail();
         }
 
         private void password_TextChanged(object sender, EventArgs e)
@@ -199,13 +146,30 @@ namespace EncryptedMailApp
           
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        /*private void button2_Click(object sender, EventArgs e)
         {
 
             string TakenKey = CryptKey.Text;
             string TakenIV = CryptIV.Text;
 
             if (TakenKey.Length != 32 && TakenIV.Length !=16)
+            {
+                MessageBox.Show("Invalid key entry. Key must be 32 character");
+            }
+            else
+            {
+                AesCrypt.setKey(TakenKey);
+                AesCrypt.setIV(TakenIV);
+            }
+        }*/
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+            string TakenKey = CryptKey.Text;
+            string TakenIV = CryptIV.Text;
+
+            if (TakenKey.Length != 32 && TakenIV.Length != 16)
             {
                 MessageBox.Show("Invalid key entry. Key must be 32 character");
             }
@@ -223,16 +187,17 @@ namespace EncryptedMailApp
 
         private void testbtn_Click(object sender, EventArgs e)//encrypt
         {
-            RSACrypt rsaobj = RSACrypt.getInstance();
-            string encrtypted = rsaobj.Encrypt(testbox.Text);
+            //RSACrypt rsaobj = RSACrypt.getInstance();
+            //string encrtypted = rsaobj.Encrypt(testbox.Text);
+            string encrtypted = RSAobj.Encrypt(testbox.Text);
             testtextbox.Text = encrtypted;
         }
         private void button4_Click(object sender, EventArgs e)//decrypt
         {
-            RSACrypt rsaobj = RSACrypt.getInstance();
-            string decrypted = rsaobj.Decrypt(testtextbox.Text);
-            testtextbox.Text = decrypted;
-            keybox.Text = rsaobj.PublicKey;    
+            //RSACrypt rsaobj = RSACrypt.getInstance();
+            //string decrypted = rsaobj.Decrypt(testtextbox.Text);
+            string decrypted = RSAobj.Decrypt(testtextbox.Text);
+            testtextbox.Text = decrypted;  
         }
 
         private void label10_Click(object sender, EventArgs e)
@@ -242,7 +207,7 @@ namespace EncryptedMailApp
 
         private void button3_Click(object sender, EventArgs e)
         {
-            GetMails();
+            GetMail();
         }
 
 
@@ -260,6 +225,13 @@ namespace EncryptedMailApp
         private void testbox_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button4_Click_1(object sender, EventArgs e)
+        {
+            string KeyPublic = keybox.Text;
+            RSAobj.PublicKey = KeyPublic;
+            MessageBox.Show("Public Key Changed");
         }
     }
 }
