@@ -25,6 +25,7 @@ namespace EncryptedMailApp
         public static string user;
         public static string mail;
         public static string userpublicKey;
+        int failTime = 0;
 
         private void LoginButton_Click(object sender, EventArgs e)
         {
@@ -80,6 +81,19 @@ namespace EncryptedMailApp
                     else
                     {
                         MessageBox.Show("User or password is wrong.");
+                        failTime++;
+                        if (failTime > 10)
+                        {
+                            if (Directory.Exists("data\\" + dir))
+                            {
+                                File.Delete("data\\" + dir+ "\\data.ls");
+                                File.Delete("data\\" + dir + "\\mail.ls");
+                                File.Delete("data\\" + dir + "\\PrivateKey.ls");
+                                File.Delete("data\\" + dir + "\\PublicKey.ls");
+                                Directory.Delete("data\\" + dir);
+                                MessageBox.Show("Your account is deleted do not brute-force xd");
+                            }
+                        }
                     }
 
                 }

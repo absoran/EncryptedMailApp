@@ -38,3 +38,8 @@ C:\Users\Ahmet Soran\Documents\Projects\EncryptedMailApp\EncryptedMailApp\obj\Re
 C:\Users\Ahmet Soran\Documents\Projects\EncryptedMailApp\EncryptedMailApp\obj\Release\EncryptedMailApp.csproj.CopyComplete
 C:\Users\Ahmet Soran\Documents\Projects\EncryptedMailApp\EncryptedMailApp\obj\Release\EncryptedMailApp.exe
 C:\Users\Ahmet Soran\Documents\Projects\EncryptedMailApp\EncryptedMailApp\obj\Release\EncryptedMailApp.pdb
+C:\Users\Ahmet Soran\Documents\Projects\EncryptedMailApp\EncryptedMailApp\bin\Release\ImapLibrary.dll
+C:\Users\Ahmet Soran\Documents\Projects\EncryptedMailApp\EncryptedMailApp\bin\Release\ImapLibrary.pdb
+C:\Users\Ahmet Soran\Documents\Projects\EncryptedMailApp\EncryptedMailApp\obj\Release\EncryptedMailApp.FriendRequests.resources
+C:\Users\Ahmet Soran\Documents\Projects\EncryptedMailApp\EncryptedMailApp\obj\Release\EncryptedMailApp.MessageComponent.resources
+C:\Users\Ahmet Soran\Documents\Projects\EncryptedMailApp\EncryptedMailApp\obj\Release\EncryptedMailApp.SendMail.resources
