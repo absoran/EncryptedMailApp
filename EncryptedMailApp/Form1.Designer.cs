@@ -77,7 +77,7 @@
             // 
             // message
             // 
-            this.message.Location = new System.Drawing.Point(861, 230);
+            this.message.Location = new System.Drawing.Point(858, 10);
             this.message.Margin = new System.Windows.Forms.Padding(2);
             this.message.Multiline = true;
             this.message.Name = "message";
@@ -361,7 +361,7 @@
             // 
             // button14
             // 
-            this.button14.Location = new System.Drawing.Point(649, 299);
+            this.button14.Location = new System.Drawing.Point(915, 275);
             this.button14.Name = "button14";
             this.button14.Size = new System.Drawing.Size(142, 51);
             this.button14.TabIndex = 51;
@@ -371,7 +371,7 @@
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(650, 243);
+            this.textBox3.Location = new System.Drawing.Point(916, 219);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(141, 20);
             this.textBox3.TabIndex = 52;
@@ -408,7 +408,7 @@
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(650, 270);
+            this.textBox4.Location = new System.Drawing.Point(916, 246);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(141, 20);
             this.textBox4.TabIndex = 56;
@@ -509,7 +509,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1327, 614);
+            this.ClientSize = new System.Drawing.Size(800, 614);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.button17);

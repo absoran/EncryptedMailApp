@@ -97,6 +97,7 @@
       <DependentUpon>AddFriend.cs</DependentUpon>
     </Compile>
     <Compile Include="AesCrypt.cs" />
+    <Compile Include="CryptoStuff.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

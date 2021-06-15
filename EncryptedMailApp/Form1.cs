@@ -24,6 +24,7 @@ namespace EncryptedMailApp
         RSACrypt RSAobj = RSACrypt.getInstance();
         EncryptedMailApp.LoginForm logform = new LoginForm();
         public static bool signed = false;
+        string password = "rastgelebirstring";
         IFirebaseConfig config = new FirebaseConfig
         {
             AuthSecret = "8sXBXsTWSypjHv9Lfu2P8biITYexw4NIQ80sAmkH",
@@ -60,6 +61,8 @@ namespace EncryptedMailApp
 
                         var uids = client.Search(SearchCondition.Text(cryptedAppSign));
                         int index = 0;
+
+
                         foreach (var id in uids)
                         {
                            
@@ -79,8 +82,7 @@ namespace EncryptedMailApp
                             string Username = AesCrypt.Decrypt(m.Body.Substring(a, b - a));
                             string sign = m.Body.Substring(e, f - e);
                             string encryptedBody = m.Body.Substring(c, d - c);
-                            
-
+                            string dir = EncryptedMailApp.LoginForm.user;
 
 
                             char[] charsToTrim = { ' ', '"' };
@@ -136,10 +138,30 @@ namespace EncryptedMailApp
                                }
                                                         
                             listBox1.Items.Add(new ListItem { Name = "From:   "+ Username + "   Subject:   "+ decryptedSubject, Value = index.ToString() });
+                            
+                            index++;
+                            
+                            foreach(Attachment attachment in m.Attachments)
+                            {
+                                byte[] allBytes = new byte[attachment.ContentStream.Length];
+                                int bytesread = attachment.ContentStream.Read(allBytes, 0, (int)attachment.ContentStream.Length);
+                                if (System.IO.Directory.Exists("data\\" + dir + "\\attachments") == false)
+                                {
+                                    System.IO.Directory.CreateDirectory("data\\" + dir + "\\attachments");
+                                }
+                                string destinationFile = "data\\" + dir + "\\attachments\\" + attachment.Name;
+                                BinaryWriter writer = new BinaryWriter(new FileStream(destinationFile, FileMode.OpenOrCreate, FileAccess.Write, FileShare.None));
+                                writer.Write(allBytes);
+                                writer.Close();
+                                if (attachment.Name.EndsWith("crp"))
+                                {
+                                    EncryptedMailApp.CryptoStuff.DecryptFile(password, destinationFile, destinationFile.Replace("crp", ""));
+                                }
+                                //MessageBox.Show("saved attachment at attachments, attachment count is : "+ m.Attachments.Count);
+                            }
 
-                            index++;                          
                         }
-
+                        
                         this.listBox1.MouseDoubleClick += new MouseEventHandler(listBox1_MouseDoubleClick);
                     }
                 });

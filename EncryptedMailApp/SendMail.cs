@@ -29,6 +29,7 @@ namespace EncryptedMailApp
         public string[,] friends = new string[50, 4];
         RSACrypt RSAobj = RSACrypt.getInstance();
         EncryptedMailApp.LoginForm logformobj = new LoginForm();
+        string password = "rastgelebirstring";
 
         FirebaseConfig config = new FirebaseConfig
         {
@@ -68,7 +69,8 @@ namespace EncryptedMailApp
                         smtp.EnableSsl = true;
                         if(!string.IsNullOrEmpty(textBox3.Text))
                         {
-                            Attachment data = new Attachment(textBox3.Text);
+                            EncryptedMailApp.CryptoStuff.EncryptFile(password, textBox3.Text, textBox3.Text+"crp" );
+                            Attachment data = new Attachment(textBox3.Text+"crp");
                             post.Attachments.Add(data);
                             smtp.Send(post);
                             MessageBox.Show("Email Sent With Attachment");
