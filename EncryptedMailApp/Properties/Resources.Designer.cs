@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace EncryptedMailApp.Properties {
+namespace Splash.Properties {
     using System;
     
     

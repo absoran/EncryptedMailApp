@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace EncryptedMailApp.Properties {
+namespace Splash.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
